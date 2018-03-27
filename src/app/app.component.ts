@@ -12,4 +12,13 @@ import { RECIPES } from './models/master_recipe_maker';
 
 export class AppComponent {
   recipes = RECIPES;
+  recipeColor(recipe) {
+    if (recipe.recipe_number === 1) {
+      return "text-danger"
+    } else if (recipe.recipe_number === 2) {
+      return "text-warning"
+    } else {
+      return "text-success"
+    }
+  }
 }

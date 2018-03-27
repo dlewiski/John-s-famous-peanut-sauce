@@ -1,17 +1,30 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="jumbotron" style="text-align:center">
-  <h1>
-    Welcome to John and Dave's baller ass recipe box player
-  </h1>
+<!-- FIRST DRAFT -->
+<div class="container-fluid">
+  <div class="jumbotron" style="text-align:center">
+    <h1>
+      Welcome to John and Dave's baller ass recipe box, playa. What's your name?
+    </h1>
+    <form>
+      <input [(ngModel)]='userName' type='text' name='user'><br>
+    </form>
+    <hr>
+    <h3>HEY THERE {{userName}}!</h3>
+  </div>
+  <h2>Your baller ass recipes:</h2>
+  <ul>
+    <li *ngFor = "let recipe of recipes">{{recipe.title}}</li>
+  </ul>
+  <div class="card" *ngFor='let recipe of recipes'>
+    <h1>{{recipe.title}}</h1>
+    <h3>INGREDIENTS</h3>
+    <li *ngFor='let ingredient of recipe.ingredients'>{{ingredient.name}}: {{ingredient.amount}} {{ingredient.amount_type}} <button (click)="editIngredient()">Edit!</button></li>
+    <h3>INSTRUCTIONS</h3>
+    <li *ngFor='let instruction of recipe.instructions'>{{instruction.description}}</li>
+  </div>
 </div>
-<h2>Your baller ass recipes:</h2>
-<ul>
-  <li *ngFor = "let recipe of recipes">{{recipe.title}}</li>
-</ul>
-<div class="card" *ngFor='let recipe of recipes'>
-  <h1>{{recipe.title}}</h1>
-  <h3>INGREDIENTS</h3>
-  <li *ngFor='let ingredient of recipe.ingredients'>{{ingredient.name}}: {{ingredient.amount}} {{ingredient.amount_type}}</li>
-  <h3>INSTRUCTIONS</h3>
-  <li *ngFor='let instruction of recipe.instructions'>{{instruction.description}}</li>
+<!-- SECOND DRAFT -->
+<div class="card">
+  <h1>SECOND DRAFT of CODE</h1>
+  <h2>RECIPES</h2>
+  <a *ngFor='let recipe of recipes' [class]=recipeColor(recipe)>{{recipe.title}}</a>
 </div>
