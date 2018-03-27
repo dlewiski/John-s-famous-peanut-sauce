@@ -26,5 +26,8 @@
 <div class="card">
   <h1>SECOND DRAFT of CODE</h1>
   <h2>RECIPES</h2>
-  <a *ngFor='let recipe of recipes' [class]=recipeColor(recipe)>{{recipe.title}}</a>
+  <a *ngFor='let item of recipes' [class]=recipeColor(item)>{{item.title}}</a>
+  <div class="card" *ngIf=selectedRecipe>
+
+  </div>
 </div>

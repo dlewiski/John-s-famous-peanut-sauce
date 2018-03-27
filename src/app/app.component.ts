@@ -12,6 +12,7 @@ import { RECIPES } from './models/master_recipe_maker';
 
 export class AppComponent {
   recipes = RECIPES;
+  selectedRecipe = null;
   recipeColor(recipe) {
     if (recipe.recipe_number === 1) {
       return "text-danger"
@@ -20,5 +21,6 @@ export class AppComponent {
     } else {
       return "text-success"
     }
-  }
+  };
+  console.log(selectedRecipe)
 }
